@@ -1,6 +1,6 @@
 var express = require('express');
 var app     = express();
-var port    = process.env.port||8080;
+var port    = process.env.port||8020;
 var mongoose= require('mongoose');
 var config  = require('./config/database');
 var path    = require('path');
