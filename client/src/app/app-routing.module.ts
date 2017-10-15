@@ -2,17 +2,31 @@ import { RouterModule, Routes } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { HomeComponent } from './components/home/home.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
-const appRoutes: Routes = [
-    {path: '', component: HomeComponent},
-    {path: 'dashboard', component: DashboardComponent},
-    {path: '**', component: HomeComponent}
-];
-@NgModule({
-    declarations: [],
-    imports: [RouterModule.forRoot(appRoutes)],
-    providers: [],
-    bootstrap: [],
-    exports: [RouterModule]
-  })
+import { RegisterComponent } from './components/register/register.component';
 
-  export class AppRoutingModule { }
+// Our Array of Angular 2 Routes
+const appRoutes: Routes = [
+  {
+    path: '',
+    component: HomeComponent // The Default Route
+  },
+  {
+    path: 'dashboard',
+    component: DashboardComponent // The Dashboard Route
+  },
+  {
+    path: 'register',
+    component: RegisterComponent // The Register Route
+  },
+  { path: '**', component: HomeComponent } // The "Catch-All" Route
+];
+
+@NgModule({
+  declarations: [],
+  imports: [RouterModule.forRoot(appRoutes)],
+  providers: [],
+  bootstrap: [],
+  exports: [RouterModule]
+})
+
+export class AppRoutingModule { }
